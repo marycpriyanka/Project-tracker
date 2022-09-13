@@ -6,9 +6,12 @@ const hourlyWageEl = $("#hourlyWage");
 const datepickerEl = $("#datepicker");
 const tableBodyEl = $("tbody");
 const formModalEl = $("#formModal");
+const projectDisplay = $("#projectDisplay");
 
 // Submit event listener to the form element
 projectFormEl.on("submit", handleFormSubmit);
+//  jQuery event delegation to attach an event listener to each of the delete buttons
+projectDisplay.on("click", ".btn", deleteProject);
 
 $(function () {
     let dateElement = $("#date");
@@ -29,7 +32,6 @@ function handleFormSubmit(event) {
     const projectType = projectTypeEl.val().trim();
     const hourlyWage = hourlyWageEl.val().trim();
     const datepicker = datepickerEl.val().trim();
-    console.log(datepicker);
 
     // Pass the captured data to printProjectData function
     printProjectData(projectName, projectType, hourlyWage, datepicker);
@@ -56,8 +58,11 @@ function printProjectData(projectName, projectType, hourlyWage, datepicker) {
     const tdEstimatedTotal = $("<td>");
     tdEstimatedTotal.text(calculateEstimatedTotal(hourlyWage, daysUntilDueDate));
 
+    // Button for deleting the project from the list
+    const tdDelete = $("<td>").addClass("btn").text("X");
+
     // Append all td elements to the table row created
-    tRow.append(tdProjectName, tdProjectType, tdHourlyWage, tdDatepicker, tdDaysUntilDueDate, tdEstimatedTotal);
+    tRow.append(tdProjectName, tdProjectType, tdHourlyWage, tdDatepicker, tdDaysUntilDueDate, tdEstimatedTotal, tdDelete);
 
     // Append the entire row to tbody element
     tableBodyEl.append(tRow);
@@ -79,4 +84,10 @@ function calculateEstimatedTotal(hourlyWage, daysUntilDueDate) {
     return hourlyWage * 8 * daysUntilDueDate;
 }
 
+// Delete project from table
+function deleteProject(event) {
+    const buttonClicked = $(event.target);
+    // The parent tr element is removed from the page
+    buttonClicked.parent("tr").remove();
+}
 
