@@ -56,7 +56,7 @@ Make the project information persist.
  
 ## Deployed link
 
-https://marycpriyanka.github.io/recipe-recommendation/
+https://marycpriyanka.github.io/Project-tracker/
 
 ## How to Contribute
 
