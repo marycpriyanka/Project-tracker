@@ -26,21 +26,28 @@ This program can be run through a browser using the link to the deployed applica
 
 ## Features
 
-- When the user enters the criteria and clicks on 'Search Recipe', all recipes matching the criteria will be displayed as cards containig the recipe name and its image.
-- The user can view the recipe by clicking on either the recipe name or image.
-- The user can add a recipe to favorites. It will be saved to local storage and can be viewed as saved recipes by clicking on 'Show saved recipes' button. 
-- The user can view the recipe page of a saved recipe by clicking on the saved recipe name.
-- Once a recipe is saved, user has option to remove it from favorites. It will then be removed from favorite list.
-- An advice or quote is displayed. The quote changes and a new one gets displayed every 10 seconds.
+- The webpage contains a header/hero area that welcomes users to the application and displays the current time and date.
+- There is also a card explaining the instructions of how to use the app and a button named 'Add project' to open a modal dialog.
+
+![Homepage](https://github.com/marycpriyanka/Project-tracker/blob/main/assets/images/screenshots/Initial%20screen.png)
+
+- When the user clicks on the 'Add project' button, a modal will pop up containing  a form asking users to fill in the following data:
+   - The name of the project
+   - The type of project (a drop-down)
+   - The hourly wage for the project (a minimum of 15 is set)
+   - The due date for the project (a datepicker with minimum date set as current date)
+ 
+![Modal](https://github.com/marycpriyanka/Project-tracker/blob/main/assets/images/screenshots/AddProjectModal.png)
+   
+- When the user clicks on 'Save changes' button after filling the form, the input values are captured, modal is closed and the captured values are displayed in a table in the web page.
+- The days until the due date is also calculated and displayed in the table. It is the difference between the due date and the current time in days.
+- Estimated total earned is also displayed in the table. It is calculated by hourly wage at 8 hours per day multiplied by the number of days until the due date
+
+![ProjectAdded](https://github.com/marycpriyanka/Project-tracker/blob/main/assets/images/screenshots/ProjectAdded.png)
+
+- There is one more column in table containing a button named 'X'. It is used to delete the corresponding project from the list.
+
 - The web page is mobile responsive too.
-
-![screenshot1](https://github.com/marycpriyanka/recipe-recommendation/blob/main/assets/images/screenshots/headerScreenshot.JPG)
-
-![screenshot2](https://github.com/marycpriyanka/recipe-recommendation/blob/main/assets/images/screenshots/screenshot2.JPG)
-
-![screenshot3](https://github.com/marycpriyanka/recipe-recommendation/blob/main/assets/images/screenshots/screenshot3.JPG)
-
-![screenshot4](https://github.com/marycpriyanka/recipe-recommendation/blob/main/assets/images/screenshots/screenshot4.JPG)
 
 ## Technologies used
 
